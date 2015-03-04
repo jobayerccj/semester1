@@ -105,18 +105,25 @@
 }
 
 .carousel-caption{
-    top:9%;
-    
+    top:13%;    
     width:23.5%;
-    left:35%;
+    height: 45%;
+    left:36.5%;
+    padding-bottom: 0;
 }
 
 .carousel-caption h2{
-    
+    font-family: 'PT Sans', sans-serif;
+    font-size: 27px;
 }
 
-.carousel-caption p{
-    
+.carousel-caption p {
+font-family: 'Lato', sans-serif;
+letter-spacing: 3px;
+padding-top: 12px;
+padding-left: 24px;
+text-transform: uppercase;
+font-size: .8em;
 }
 
 .carousel-caption a{
@@ -127,4 +134,75 @@
 .carousel-caption a:hover{   
     text-decoration: none;
 }
-//Carousel end
+
+.carousel-control.right{
+    right: 51.5%;
+}
+
+.carousel-control {
+  background: #e4551d;
+  border-radius: 41px;
+  color: #fff;
+  font-size: 20px;
+  height: 48px;
+  top: 61%;
+  width: 48px;
+  opacity: 1;
+}
+
+.arrow{
+    margin-top: 33%;
+}
+/*Carousel end*/
+
+.txt1 {
+  padding-bottom: 20px;
+  color: #637f83;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.txt1 h3{
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 23px;
+    margin-bottom: 0px;
+}
+
+.txt1 p{
+    font-size: 15px;
+}
+
+.services {
+  background: none repeat scroll 0 0 #f6f6f6;
+  padding: 40px 0;
+}
+
+.services i{
+    color:#e4551d;
+}
+
+.services h3{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: #637f83;
+}
+
+.services p{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    color:#959494;
+}
+
+.services a {
+  background: none repeat scroll 0 0 #637f83;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Source Sans Pro",sans-serif;
+  font-weight: 900;
+  padding: 3px 8px;
+}
+
+.services a:hover{
+    text-decoration: none;
+}
