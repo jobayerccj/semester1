@@ -320,3 +320,42 @@ font-family: 'Source Sans Pro', sans-serif;
   font-weight: 900;
   padding: 5px 14px;
 }
+
+
+
+
+.twitter1 {
+  background: none repeat scroll 0 0 #597275;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  margin-top: 9px;
+  padding: 8px;
+}
+
+.twitter_i_main{
+    padding-left: 8px;
+}
+
+.twitter1 i{
+    color:#fff;
+    font-size: 48px;
+}
+
+.twitter_text {
+  padding-left: 35px;
+}
+
+.twitter1 p {
+  color: #fff;
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 10px;
+}
+
+.twitter1 a {
+    color:#fff;
+    text-decoration: underline;
+}
+
+.twitter1 a:hover {
+    text-decoration: none;
+}
