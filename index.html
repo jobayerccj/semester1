@@ -12,10 +12,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         
         <link rel="stylesheet" href="css/style.css" type="text/css"/>
-        <style>
-            
-           
-        </style>
+        <link href="css/grid-slider.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
     </head>
     <body>
         <header>
@@ -137,8 +135,8 @@ sagittis vel, euismod vel, velit. Pellentesque egestas sem.</p>
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
                     
-                        <i class="fa fa-arrow-circle-left"></i>
-                        <i class="fa fa-arrow-circle-right"></i>
+                        
+                        
                      
                 </div>
             </div>
@@ -146,22 +144,27 @@ sagittis vel, euismod vel, velit. Pellentesque egestas sem.</p>
         
         <div class="container-fluid">
             <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <ul id="flexiselDemo1"> 
+                        <li style="margin-right: 8px;"><img src="images/portfolio1.jpg" alt=""/></li>
+                        <li style="margin-right: 8px;"><img src="images/portfolio2.jpg" alt=""/></li>    
+                        <li style="margin-right: 8px;"><img src="images/portfolio3.jpg" alt=""/></li>     
+                        
+                        <li ><img src="images/portfolio4.jpg" alt=""/></li>                                                          
+                    </ul>
+                </div>
                 
-                    <div class="col-md-offset-2 col-md-2">
-                        <img src="images/portfolio1.jpg" alt=""/>
-                    </div>
+ 
+
+                <script type="text/javascript">
+
+                $(window).load(function() {
+                    $("#flexiselDemo1").flexisel();
+
+                });
+                </script>
+                
                     
-                    <div class="col-md-2">
-                        <img src="images/portfolio2.jpg" alt=""/>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <img src="images/portfolio3.jpg" alt=""/>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <img src="images/portfolio4.jpg" alt=""/>
-                    </div>
                 
                 <div class="col-md-offset-2 col-md-8">
                     <a href="#">View Portfolio</a>
@@ -206,6 +209,7 @@ sagittis vel, euismod vel, velit. Pellentesque egestas sem.</p>
         </div>
         <footer>
             <div class="container-fluid">
+             
                 <div class="row">
                     <div class="col-md-offset-2 col-md-8">
                         <h2>
