@@ -270,3 +270,31 @@ font-size: .8em;
 .txt2 p{
     font-size: 15px;
 }
+
+.subscribe_i_main {
+padding-left: 4px;
+margin-top: 4px;
+}
+
+.subscribe_i {
+  color: #fff;
+  font-size: 29px;
+}
+
+.subscribe {
+    color:#fff;
+padding-left: 7px;
+font-family: 'Source Sans Pro', sans-serif;
+}
+
+.subscribe h4{    
+    margin-top: 6px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.subscribe p{
+    font-size: 11px;
+}
+
