@@ -359,3 +359,41 @@ font-family: 'Source Sans Pro', sans-serif;
 .twitter1 a:hover {
     text-decoration: none;
 }
+
+
+
+.social{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-left: 0;
+}
+
+.social_txt{
+    font-family: "Source Sans Pro",sans-serif;
+    padding: 0;
+    margin: 0;
+    padding-left: 28px;
+}
+
+.social_txt h4{  
+    font-weight: bold;
+    color:#637f83;
+    margin-bottom: 0;
+}
+
+.social_txt p{  
+    color:#b5c7c9;
+}
+
+.copyright1{
+    font-family: "Source Sans Pro",sans-serif;
+    background: none repeat scroll 0 0 #637f83;
+    color:#fff;
+    padding: 10px 0;
+}
+
+.copyright1 p {
+  font-size: 10px;
+  padding-top: 14px;
+}
+
