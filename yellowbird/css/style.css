@@ -1,0 +1,60 @@
+.top-menu1{
+    padding-top: 20px;
+}
+
+.top-menu1 ul{  
+  display: inline-flex;
+  list-style: outside none none;
+  padding-top: 10px;
+}
+
+.top-menu1 ul li a{  
+    padding: 15px;
+    background: blue;
+    font-weight: bold;
+    color: #fff;
+}
+
+.top-menu1 ul li a:hover{  
+    color: #000;
+    background: #fff;
+    text-decoration: none;
+}
+
+.section1{
+    padding-top: 20px;
+}
+
+.section1 img{
+    width:100%;
+}
+
+label{
+    float:left;
+    width:40%;
+}
+
+.form-control{
+    width:60%;
+}
+
+.form_h1{
+   margin-top: 0px; 
+   text-decoration: underline;
+}
+
+.submit-form1{
+    width:100%;
+}
+
+.section2{
+    padding-top: 30px;
+}
+
+.section2 img{
+    width:100%;
+}
+
+.section3{
+    padding-top: 20px;         
+}
