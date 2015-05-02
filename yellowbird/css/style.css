@@ -125,6 +125,10 @@ footer p{
     color:#337ab7;
 }
 
+.more-info{
+  padding: 30px 0;  
+}
+
 .more-info-btn {
   background: none repeat scroll 0 0 #80aeec;
   border-radius: 54%;
@@ -142,4 +146,20 @@ footer p{
 
 .more-info-btn a:hover{
     text-decoration: none;
+}
+
+.team_img{
+    padding-bottom: 10px;
+}
+
+.team_detals p{
+    margin:0;
+}
+
+.sales-img1{
+    padding-top: 100px;
+}
+
+.sales-img2{
+    padding-top: 30px;
 }
