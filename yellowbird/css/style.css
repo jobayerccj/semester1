@@ -92,7 +92,6 @@ label{
 }
 
 
-
 .button_part1_1 {
   color: #fff;
   font-size: 29px;
@@ -126,7 +125,21 @@ footer p{
     color:#337ab7;
 }
 
-.more-info-btn{
-    padding:20px;
-    background: #80aeec;
+.more-info-btn {
+  background: none repeat scroll 0 0 #80aeec;
+  border-radius: 54%;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 7px 40px;
+  width: 172px;
+  box-shadow: inset 0px 0px 9px 0px #fff;
+}
+
+.more-info-btn a{
+    color: #000;
+}
+
+.more-info-btn a:hover{
+    text-decoration: none;
 }
