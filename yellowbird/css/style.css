@@ -5,20 +5,56 @@
 .top-menu1 ul{  
   display: inline-flex;
   list-style: outside none none;
-  padding-top: 10px;
+  
 }
 
-.top-menu1 ul li a{  
-    padding: 15px;
-    background: url(../images/menu2.jpg) no-repeat;
+.top-menu1 ul li a{    
     font-weight: bold;
     color: #fff;
+}
+
+.top-menu1 ul li:nth-child(1) a{    
+    background: url(../images/about-menu.jpg) no-repeat;
+}
+
+.top-menu1 ul li:nth-child(2) a{    
+    background: url(../images/about-menu2.jpg) no-repeat;
+}
+
+.top-menu1 ul li:nth-child(3) a{    
+    background: url(../images/estete-sales-menu.jpg) no-repeat;
+}
+
+.top-menu1 ul li:nth-child(4) a{    
+    background: url(../images/estete-services-menu.jpg) no-repeat;
+}
+
+.top-menu1 ul li:nth-child(5) a{    
+    background: url(../images/preservation-menu.jpg) no-repeat;
+}
+
+.top-menu1 ul li:nth-child(6) a{    
+    background: url(../images/blog-menu.jpg) no-repeat;
 }
 
 .top-menu1 ul li a:hover{  
     color: #000;
     background: #fff;
     text-decoration: none;
+}
+
+.navbar-default{
+    border:none;
+    background: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+
+.navbar-nav > li > a {
+  padding-bottom: 15px;
+  padding-top: 10px;
 }
 
 .section1{
@@ -162,4 +198,16 @@ footer p{
 
 .sales-img2{
     padding-top: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .top-menu1 ul li a{    
+        font-size:11px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .top-menu1 ul{  
+        display: inline;       
+    }
 }
