@@ -80,12 +80,18 @@ label{
     padding: 10px 0;
 }
 
+.button_part a:hover{
+    text-decoration: none;
+}
+
 .button_part1{
    border-radius: 13px;
    padding:16px 10px;
    background: #75803b;  
    box-shadow: inset 0px 0px 9px 0px #fff;
 }
+
+
 
 .button_part1_1 {
   color: #fff;
@@ -118,4 +124,9 @@ footer{
 
 footer p{
     color:#337ab7;
+}
+
+.more-info-btn{
+    padding:20px;
+    background: #80aeec;
 }
