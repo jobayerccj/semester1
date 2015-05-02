@@ -10,7 +10,7 @@
 
 .top-menu1 ul li a{  
     padding: 15px;
-    background: blue;
+    background: url(../images/menu2.jpg) no-repeat;
     font-weight: bold;
     color: #fff;
 }
@@ -38,13 +38,21 @@ label{
     width:60%;
 }
 
+.form-part{
+    background: #f3f1f2;
+}
+
 .form_h1{
    margin-top: 0px; 
    text-decoration: underline;
+   color:#447391;
 }
 
 .submit-form1{
     width:100%;
+    background: #055094;
+    color:#cff4fa;
+    font-weight: bold;
 }
 
 .section2{
@@ -58,4 +66,56 @@ label{
 
 .section3{
     padding-top: 20px;         
+}
+
+.section3 h1,p{
+    color:#69695f;
+}
+
+.section3 a:hover{
+    text-decoration: none;
+}
+
+.button_part{
+    padding: 10px 0;
+}
+
+.button_part1{
+   border-radius: 13px;
+   padding:16px 10px;
+   background: #75803b;  
+   box-shadow: inset 0px 0px 9px 0px #fff;
+}
+
+.button_part1_1 {
+  color: #fff;
+  font-size: 29px;
+  font-weight: bold;
+  vertical-align: middle;
+  
+}
+
+.button_part1_2{
+   color:#b67a31; 
+   vertical-align: middle;
+}
+
+.button_part1_3{
+   color:#b67a31; 
+   vertical-align: middle;
+   font-weight: bold;
+   font-size: 24px;
+}
+
+.button1_note{
+    color:#a7a7a7;
+}
+
+footer{
+    background: #9bdb3f;
+    padding:20px 10px 10px;
+}
+
+footer p{
+    color:#337ab7;
 }
