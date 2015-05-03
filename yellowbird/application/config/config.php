@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/semester1/yellowbird';
+$config['base_url'] = 'http://local.semester1.dev/yellowbird/';
 
 /*
 |--------------------------------------------------------------------------

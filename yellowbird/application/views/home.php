@@ -5,8 +5,15 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 form-part">
                     <h1 class="form_h1">Want More Info?</h1>
+                    <?php                        
+                            echo $this->session->userdata('success_msg');  
+                            
+                            $this->session->unset_userdata('success_msg');
+                        
+                    ?>                       
                     <p>Interested in more information about a specific sale on our website</p>
-                    <form>
+                    
+                    <form action="<?php echo base_url();?>index.php/home/form1" method="post"/>
                         
                         <div class="form-group">
                         
@@ -16,7 +23,7 @@
                         
                         <div class="form-group">
                           <label for="InputEmail1">Email </label>
-                          <input type="email" class="form-control" id="InputEmail1" placeholder="" name="email">
+                          <input type="email" class="form-control" id="InputEmail1" placeholder="" name="email" required="required">
                         </div>
                         
                         <div class="form-group">
@@ -26,7 +33,7 @@
                         
                         <div class="form-group">
                           <label for="InputSubject">Subject</label>
-                          <input type="text" class="form-control" id="InputSubject" placeholder="" name="subject">
+                          <input type="text" class="form-control" id="InputSubject" placeholder="" name="subject" required="required">
                         </div>
                         
                         <button type="submit" class="btn btn-default submit-form1">Request More Information Now</button>
