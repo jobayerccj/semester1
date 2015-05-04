@@ -3,7 +3,12 @@
                 
                 <div class="col-lg-offset-4 col-lg-4 col-md-4 col-sm-4 form-part">
                     <h1 class="form_h1">Admin login Panel</h1>
-                   
+                   <?php 
+                        if(isset($error_msg))
+                        {
+                            echo $error_msg;
+                        }
+                    ?>
                     <form action="<?php echo base_url();?>index.php/admin/login" method="post"/>
                         
                         <div class="form-group">

@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-lg-offset-2 col-lg-8 text-justify">
                     <div class="col-lg-3">
-                        <img src="images/team1.jpg" alt="team1" class="team_img"/>
+                        <img src="<?php echo base_url();?>images/team1.jpg" alt="team1" class="team_img"/>
                     </div>
                     <div class="col-lg-9 team_detals">
                        <p>Mr Team1</p> 
@@ -56,7 +56,7 @@
                 
                 <div class="col-lg-offset-2 col-lg-8 text-justify">
                     <div class="col-lg-3">
-                        <img src="images/team2.jpg" alt="team2" class="team_img"/>
+                        <img src="<?php echo base_url();?>images/team2.jpg" alt="team2" class="team_img"/>
                     </div>
                     <div class="col-lg-9 team_detals">
                        <p>Mr Team1</p> 
@@ -68,11 +68,11 @@
                 
                 <div class="col-lg-offset-2 col-lg-8 text-justify">
                     <div class="col-lg-3">
-                        <img src="images/team3.jpg" alt="team3"/>
+                        <img src="<?php echo base_url();?>images/team3.jpg" alt="team3"/>
                         <p>Mr. Team3</p>
                     </div>
                     <div class="col-lg-3">
-                       <img src="images/team4.jpg" alt="team4"/>
+                       <img src="<?php echo base_url();?>images/team4.jpg" alt="team4"/>
                        <p>Mr. Team3</p>
                     </div>
                   

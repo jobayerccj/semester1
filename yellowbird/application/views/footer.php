@@ -8,7 +8,17 @@
                     </div>
                     
                     <div class="col-lg-6 col-md-6 col-sm-6 text-right">
+                         <?php 
+                            
+                            if($this->session->userdata('username'))
+                            {
+                          ?>
+                        <a href="<?php echo base_url();?>index.php/admin/logout">Logout</a>
+                        <?php 
+                            } else{
+                        ?>
                         <a href="<?php echo base_url();?>index.php/admin">Login</a>
+                            <?php }?>
                     </div>
                 </div>
             </div>

@@ -12,22 +12,22 @@
                         <div class="form-group">
                         
                           <label for="name">Name</label>
-                          <input type="text" class="form-control" id="InputName" placeholder="" name="name" value="<?php echo $name;?>">
+                          <input type="text" class="form-control" id="InputName" placeholder="" name="name" value="<?php if(isset($username))echo $username; ?>">
                         </div>
                         
                         <div class="form-group">
                           <label for="InputEmail1">Email </label>
-                          <input type="email" class="form-control" id="InputEmail1" placeholder="" name="email" required="required" value="<?php echo $email;?>">
+                          <input type="email" class="form-control" id="InputEmail1" placeholder="" name="email" required="required" value="<?php if(isset($email))echo $email; ?>">
                         </div>
                         
                         <div class="form-group">
                           <label for="phone">Phone</label>
-                          <input type="text" class="form-control" id="InputPhone" placeholder="" name="phone" value="<?php echo $phone;?>">
+                          <input type="text" class="form-control" id="InputPhone" placeholder="" name="phone" value="<?php if(isset($phone))echo $phone; ?>">
                         </div>
                         
                         <div class="form-group">
                           <label for="InputSubject">Subject</label>
-                          <input type="text" class="form-control" id="InputSubject" placeholder="" name="subject" required="required" value="<?php echo $subject;?>">
+                          <input type="text" class="form-control" id="InputSubject" placeholder="" name="subject" required="required" value="<?php if(isset($subject))echo $subject; ?>">
                         </div>
                         
                         <button type="submit" class="btn btn-default submit-form1">Request More Information Now</button>
