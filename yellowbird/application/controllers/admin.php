@@ -1,7 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
-
+        
+        function __construct() {
+            parent::__construct();
+            $this->load->helper('form','url');
+            $this->load->library('form_validation');
+            $this->load->model('Admin_db');
+        }
+        
 	public function index()
 	{       
             $this->load->view('header');
@@ -73,14 +80,35 @@ class Admin extends CI_Controller {
         
         public function new_member2()
         {   
-             
-            $this->load->library('form_validation');
+            
+            //$this->load->helper(array('form', 'url')); 
+            
+            $config = array(
+                'upload_path' => "./uploads/",
+                'allowed_types' => "gif|jpg|png|jpeg",
+                'overwrite' => TRUE,
+                'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+                'max_height' => "768",
+                'max_width' => "1024"
+                );
+            
+            $this->load->library('upload', $config);
             
             $data['name'] = $this->input->post('name');
             $data['email'] = $this->input->post('email');
             $data['phone'] = $this->input->post('phone');
-            $data['image'] = $this->input->post('image');
             
+            $this->upload->do_upload();
+            
+            if ( ! $this->upload->do_upload())
+		{
+			$error = array('error' => $this->upload->display_errors());
+
+			$this->load->view('new_member', $error);
+		}
+            
+            $data[] = $this->upload->data();
+            $data['image'] = $data[0]['file_name'];
             $this->form_validation->set_rules('name', 'Name', 'trim');
             $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
             $this->form_validation->set_rules('phone', 'Phone', 'trim');
@@ -91,27 +119,21 @@ class Admin extends CI_Controller {
             {   
                 //$this->session->set_userdata('error_msg', 'Thank you for your information, we will contact with you soon.'); 
                 $this->load->view('header');           
-                $this->load->view('form1', $data);
+                $this->load->view('new_member', $data);
                 $this->load->view('footer2');
             }
             else
             {   
-                $this->load->model('Newsletter');
-                
-                $this->Newsletter->insert($data); 
-                $to = $data['email'];
-                $message = "Thank you for contacting with us. we will inform you about it within a short time.";
-                mail($to,"Contact with Yellow Bird",$message);
-                
-                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact with you soon.');                
+               
+                $this->Admin_db->insert_member($data); 
+               
+                $this->session->set_userdata('success_msg', 'New member successfully added.');                
                 $this->load->view('header');           
-                $this->load->view('home',$data);
+                $this->load->view('logged_in');
                 $this->load->view('footer2');
             }
             
-            $this->load->view('header');
-            $this->load->view('new_member');
-            $this->load->view('footer');
+            
         }
         
         public function email_list()
@@ -122,10 +144,25 @@ class Admin extends CI_Controller {
         }
         
         public function delete_member()
-        { 
+        {   
+            $data['members'] = $this->Admin_db->all_member();   
+           
             $this->load->view('header');
-            $this->load->view('new_member');
+            $this->load->view('delete_member', $data);
             $this->load->view('footer');
+        }
+        
+         public function delete_member2()
+        { 
+            $id = $this->input->post('id');
+            
+            $this->Admin_db->delete_member($id);  
+            
+            $this->session->set_userdata('success_msg', 'Member successfully deleted.');     
+            $this->load->view('header');
+            $this->load->view('logged_in');
+            $this->load->view('footer');
+            
         }
         
         public function edit_member()

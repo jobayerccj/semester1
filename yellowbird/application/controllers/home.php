@@ -11,8 +11,11 @@ class Home extends CI_Controller {
         
         public function about()
         { 
+            $this->load->model('Admin_db');
+            $data['members'] = $this->Admin_db->all_member();  
+            
             $this->load->view('header');
-            $this->load->view('about');
+            $this->load->view('about', $data);
             $this->load->view('footer2');
         }
         

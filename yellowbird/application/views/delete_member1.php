@@ -1,7 +1,5 @@
 <div class="container-fluid">
-            <div class="row section1">
-                
-                <div class="col-lg-12 col-md-12 col-sm-12 form-part">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-part">
                    
                    <?php                      
                         if($this->session->userdata('username'))
@@ -10,9 +8,11 @@
                    <h1 class="form_h1">Admin login Panel</h1>
                    
                    <div class="col-lg-6 col-md-6">
-                       <h3>Enter information for adding new member</h3>
+                       <h3>Delete member</h3>
                        <?php if(isset($error))echo $error;?>
-                        <form action="<?php echo base_url();?>index.php/admin/new_member2" method="post" enctype="multipart/form-data"/>
+                       
+                       
+                        <form action="<?php echo base_url();?>index.php/admin/delete_member2" method="post" enctype="multipart/form-data"/>
 
                              <div class="form-group">
 
@@ -41,7 +41,6 @@
                    
                     <?php }?>
                 </div>
-            </div>
 </div>
 
 <br/><br/>

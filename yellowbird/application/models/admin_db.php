@@ -20,8 +20,27 @@ class Admin_db extends CI_Model {
         return count($result);
     }
     
-    function insert($data){   
-        $this->db->insert('more_info', $data);
+    function insert_member($data){ 
+        
+        $new_data['name'] = $data['name'];
+        $new_data['email'] = $data['email'];
+        $new_data['phone'] = $data['phone'];
+        $new_data['image'] = $data['image'];
+        
+        $this->db->insert('member', $new_data);
+    }
+    
+    function all_member(){ 
+        $this->db->select('*');
+        $this->db->from('member');
+        
+        $query = $this->db->get();        
+        return $query->result();       
+    }
+    
+    function delete_member($id){
+        $this->db->where('id', $id);
+        $this->db->delete('member'); 
     }
     
     
