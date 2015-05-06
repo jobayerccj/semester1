@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
             <div class="row section1">
                 
                 <div class="col-lg-offset-4 col-lg-4 col-md-4 col-sm-4 form-part">

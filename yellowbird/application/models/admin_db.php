@@ -43,5 +43,12 @@ class Admin_db extends CI_Model {
         $this->db->delete('member'); 
     }
     
-    
+    function more_info_details(){ 
+        $this->db->select('*');
+        $this->db->from('more_info');
+        
+        $query = $this->db->get();        
+        return $query->result();       
+    }
+ 
 }

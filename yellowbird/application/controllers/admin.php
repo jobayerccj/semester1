@@ -173,9 +173,11 @@ class Admin extends CI_Controller {
         }
         
         public function more_info_list()
-        { 
+        {   
+            $data['more_info'] = $this->Admin_db->more_info_details(); 
+            
             $this->load->view('header');
-            $this->load->view('new_member');
+            $this->load->view('more_info_list', $data);
             $this->load->view('footer');
         }
    
