@@ -1,27 +1,28 @@
-<div class="container-fluid">
+<div class="container">
             <div class="row section1">
                 <div class="col-lg-12 text-center">
-                    <img src="<?php echo base_url();?>images/Sale-Mark2.jpg" alt="registration-left"/>
+                    <img src="<?php echo base_url();?>images/emotionheader7146245.jpg" alt="registration-left"/>
                 </div>
                
             </div>
         </div>
       
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-offset-2 col-lg-8 text-justify">
+                <div class="col-lg-12 text-justify">
                     <h1>About Us</h1>
                     <p>
                         Yellow Bird Estate Sales is owned by Michael Adamson.  Michael is a native of North East Georgia.  
                         He left the corporate world (Banking, Real Estate and Home Building) to follow his love... Estate Sales and Antiques.  
                         You will find him experienced and fully capable of handling all aspects of your estate sale needs. 
-                        Michael attends sales and auctions on a regular basis to keep current on trends and values of what is selling and what is not.  Michael is a licensed Georgia Home Builder (Contractor), a member of the North Georgia Home Builders Association, a Member of the Association of Online Appraisers and a Member of the American Society of Estate Liquidators.
+                        Michael attends sales and auctions on a regular basis to keep current on trends and values of what is selling and what is not.  
+                        Michael is a licensed Georgia Home Builder (Contractor), a member of the <a href="http://www.gainesvillehomeexpo.com/">North Georgia Home Builders Association<a/>, a Member of the <a href="http://www.aoaonline.org/">Association of Online Appraisers</a> and a <a href="http://www.aselonline.com/">Member of the American Society of Estate Liquidators</a>.
                     </p>
                     
                     <p>
                         Mark Adamson is a life long Atlanta native.  
                         Mark has always had a love of collecting and a love of meeting and working with new people.  
-                        He is an Associate Broker with Virtural Properties.net and heads up the property listing and estate preservation services for Yellowbird.  
+                        He is an Associate Broker with <a href='http://virtualproperties.net/'>Virtural Properties.net</a> and heads up the property listing and estate preservation services for Yellowbird.  
                         Mark's involvement in Real Estate goes back almost a quarter century in the Atlanta market.  
                         With a keen eye for what is selling, he will use his  extensive marketing tools to help you market your property to recieves offers quickly, and his negotiating skills will allow you to quickly decided if this the the right offer for you.  
                         Call me today to set up an appointment.
@@ -39,11 +40,14 @@ We're looking forward to meeting you soon.
             </div>
         </div>
         
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                
+                <br/>
+                <div class="col-lg-offset-1 col-lg-8 text-justify">
+                    <h3>Our Team</h3>
+                </div>
                 <?php if(isset($members)) foreach($members as $member){ ?>
-                    <div class="col-lg-offset-2 col-lg-8 text-justify">
+                    <div class="col-lg-8 text-justify">
                         <div class="col-lg-4">
                             <img src="<?php echo base_url();?>uploads/<?php echo $member->image;?>" alt="team1" class="team_img"/>
                         </div>
@@ -60,9 +64,9 @@ We're looking forward to meeting you soon.
             </div>
         </div>
         
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-8 text-center more-info">
+                <div class="col-lg-12 text-center more-info">
                     <div class="more-info-btn">
                         <a href="#"><div class="click-here">Click Here</div> For More Information</a>
                     </div>

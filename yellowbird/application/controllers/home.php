@@ -33,6 +33,13 @@ class Home extends CI_Controller {
             $this->load->view('footer2');
         }
         
+        public function preservation()
+        { 
+            $this->load->view('header');
+            $this->load->view('preservation');
+            $this->load->view('footer2');
+        }
+        
         public function form1()
         { 
             $this->load->library('form_validation');

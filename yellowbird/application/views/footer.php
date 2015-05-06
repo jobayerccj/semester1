@@ -1,5 +1,5 @@
 <footer>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="#" onclick="window.print();return false;"><i class="fa fa-print"></i> Print</a> | <a href="#">Sitemap</a>

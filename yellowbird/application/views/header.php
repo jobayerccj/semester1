@@ -15,11 +15,11 @@
     </head>
     <body>
         <header>
-            <div class="container-fluid">
+            <div class="container">
               
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2">
-                        <img src="<?php echo base_url();?>images/logo.png" alt="logo-yellowbird"/>
+                        <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.jpg" alt="logo-yellowbird"/></a>
                     </div>
                   
                     <div class="col-lg-10 col-nd-10 col-sm-10 top-menu1">
@@ -59,14 +59,28 @@
                 </div>
             </div>
 
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row ">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                        <img src="<?php echo base_url();?>images/logo1.png" alt="logo1"/>
-                        <img src="<?php echo base_url();?>images/logo2.png" alt="logo2"/>
-                        <img src="<?php echo base_url();?>images/logo3.png" alt="logo3"/>
-                        <img src="<?php echo base_url();?>images/logo4.png" alt="logo4"/>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                        <a href="#">
+                            <img src="<?php echo base_url();?>images/virtual-properties-realty.gif" alt="virtual-properties-realty" style="width: 100%;"/>
+                        </a>
                     </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1">
+                        <a href="http://www.gainesvillehomeexpo.com/">
+                            <img src="<?php echo base_url();?>images/hba.jpg" alt="Home Builders" style="width: 100%;"/>
+                        </a>
+                    </div>
+                    <div class="col-lg-1 col-md-3 col-sm-1" style="padding-left: 0;">
+                        <a href="http://www.aselonline.com/">
+                            <img src="<?php echo base_url();?>images/american-society-of-estate.jpg" alt="american-society-of-estate"/>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <br/>
+                        <a id="bbblink" class="ruhzbum" href="http://www.bbb.org/atlanta/business-reviews/estate-liquidators/yellow-bird-antiques-and-interiors-in-dawsonville-ga-27495525#bbbseal" title="Yellow Bird Antiques & Interiors, LLC is a BBB Accredited Estate Liquidator in Dawsonville, GA" style="display: block;position: relative;overflow: hidden; width: 150px; height: 68px; margin: 0px; padding: 0px;"><img style="padding: 0px; border: none;" id="bbblinkimg" src="http://seal-atlanta.bbb.org/logo/ruhzbum/yellow-bird-antiques-and-interiors-27495525.png" width="300" height="68" alt="Yellow Bird Antiques & Interiors, LLC is a BBB Accredited Estate Liquidator in Dawsonville, GA" /></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-atlanta.bbb.org' + unescape('%2Flogo%2Fyellow-bird-antiques-and-interiors-27495525.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+                    </div>
+                
                 </div>
             </div>
         </header>

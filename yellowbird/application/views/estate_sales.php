@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
             <div class="row section1">
                 <div class="col-lg-12 text-center">
                     <img src="<?php echo base_url();?>images/People-lined-up.jpg" alt="registration-left"/>
@@ -9,7 +9,7 @@
         
         
         
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-2">
                     <img src="<?php echo base_url();?>images/estate-sales1.jpg" alt="" class="sales-img1"/>
@@ -37,9 +37,9 @@
         
         
         
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-8 text-center more-info">
+                <div class="col-lg-12 text-center more-info">
                     <div class="more-info-btn">
                         <a href="#"><div class="click-here">Click Here</div> For More Information</a>
                     </div>
