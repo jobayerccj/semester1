@@ -18,11 +18,11 @@
             <div class="container">
               
                 <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-2">
-                        <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.jpg" alt="logo-yellowbird"/></a>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                        <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.jpg" alt="logo-yellowbird" style="width: 100%;"/></a>
                     </div>
                   
-                    <div class="col-lg-10 col-nd-10 col-sm-10 top-menu1">
+                    <div class="col-lg-10 col-md-10 top-menu1">
                         
                         <nav class="navbar navbar-default">
                             <div class="container-fluid">
@@ -61,17 +61,17 @@
 
             <div class="container">
                 <div class="row ">
-                    <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="col-lg-2 col-md-3 col-sm-3">
                         <a href="#">
                             <img src="<?php echo base_url();?>images/virtual-properties-realty.gif" alt="virtual-properties-realty" style="width: 100%;"/>
                         </a>
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1">
+                    <div class="col-lg-1 col-md-2 col-sm-2">
                         <a href="http://www.gainesvillehomeexpo.com/">
                             <img src="<?php echo base_url();?>images/hba.jpg" alt="Home Builders" style="width: 100%;"/>
                         </a>
                     </div>
-                    <div class="col-lg-1 col-md-3 col-sm-1" style="padding-left: 0;">
+                    <div class="col-lg-1 col-md-1 col-sm-2" style="padding-left: 0;">
                         <a href="http://www.aselonline.com/">
                             <img src="<?php echo base_url();?>images/american-society-of-estate.jpg" alt="american-society-of-estate"/>
                         </a>

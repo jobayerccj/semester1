@@ -207,6 +207,15 @@ footer p{
     padding-top: 30px;
 }
 
+@media screen and (max-width: 980px) {
+    
+    .top-menu1 ul li a{    
+        font-size:10px;
+    }
+
+}
+
+
 @media screen and (max-width: 800px) {
     .top-menu1 ul li a{    
         font-size:11px;
