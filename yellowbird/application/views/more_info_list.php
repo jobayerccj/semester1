@@ -39,6 +39,8 @@
                                     echo '<td style="border:1px solid #000;">';
                                     echo $info->subject;
                                     echo '</td>';
+                                
+                                echo '</tr>';
                                     ?>
                                 
                            <?php  } ?>

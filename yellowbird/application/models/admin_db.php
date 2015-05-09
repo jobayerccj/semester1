@@ -50,5 +50,13 @@ class Admin_db extends CI_Model {
         $query = $this->db->get();        
         return $query->result();       
     }
+    
+    function email_list(){ 
+        $this->db->select('*');
+        $this->db->from('newsletter');
+        
+        $query = $this->db->get();        
+        return $query->result();       
+    }
  
 }

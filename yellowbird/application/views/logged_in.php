@@ -14,6 +14,7 @@
                        <li><a href="<?php echo base_url();?>index.php/admin/new_member">Add new member</a></li>
                        <li><a href="<?php echo base_url();?>index.php/admin/delete_member">Delete Member</a></li>
                        <li><a href="<?php echo base_url();?>index.php/admin/more_info_list">Show more info request list</a></li>
+                       <li><a href="<?php echo base_url();?>index.php/admin/email_list">Show email list</a></li>
 <!--                       <li><a href="<?php echo base_url();?>index.php/admin/edit_member">Edit member info</a></li>
                        <li><a href="<?php echo base_url();?>index.php/admin/email_list">Show email list</a></li>
                        -->

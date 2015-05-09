@@ -138,8 +138,11 @@ class Admin extends CI_Controller {
         
         public function email_list()
         { 
+            $data['email_list'] = $this->Admin_db->email_list(); 
+            
+            
             $this->load->view('header');
-            $this->load->view('new_member');
+            $this->load->view('email_list', $data);
             $this->load->view('footer');
         }
         
