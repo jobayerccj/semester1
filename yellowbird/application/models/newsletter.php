@@ -8,7 +8,13 @@ class Newsletter extends CI_Model {
         parent::__construct();
     }
     
-    function insert($data){   
+    function insert_more_info($data){   
         $this->db->insert('more_info', $data);
     }
+    
+    function insert_email($data){   
+        $this->db->insert('newsletter', $data);
+    }
+    
+    
 }

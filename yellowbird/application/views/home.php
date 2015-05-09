@@ -72,11 +72,13 @@
                 </div>
                 
                 <div class="col-lg-12 col-md-12 col-sm-12 text-center button_part">
-                    <a href="#">
+                    <?php if($this->session->userdata('success_email_msg')) { echo $this->session->userdata('success_email_msg');  } else{?>
+                    <a href="<?php echo base_url();?>index.php/home/newsletter">
                         <span class="button_part1">
                             <span class="button_part1_1">JOIN</span><span class="button_part1_2"> our</span></span>
                         <span class="button_part1_3">list</span></a>
                     <p class="button1_note">get newsletters by email</p>
+                    <?php }?>
                 </div>
                 
               

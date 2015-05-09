@@ -45,7 +45,7 @@
                                     <li><a href="./">Home</a></li>
                                     <li><a href="<?php echo base_url();?>index.php/home/about">About us</a></li>
 
-                                    <li><a href="<?php echo base_url();?>index.php/home/estate_sales">Estate Sales</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/home/estate_sales">Real Estate</a></li>
                                     <li><a href="<?php echo base_url();?>index.php/home/estate_services">Estate Services</a></li>
                                     <li><a href="<?php echo base_url();?>index.php/home/preservation">Preservation Services</a></li>
                                     <li><a href="<?php echo base_url();?>index.php/home/blog">Blog</a></li>
