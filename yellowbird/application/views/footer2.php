@@ -9,7 +9,7 @@
                     
                     <div class="col-lg-6 text-right">
                         <div class="col-lg-12 text-right button_part">
-                            <a href="#">
+                            <a href="<?php echo base_url();?>index.php/home/newsletter">
                                 <span class="button_part1">
                                     <span class="button_part1_1">JOIN</span><span class="button_part1_2"> our</span></span>
                                 <span class="button_part1_3">list</span>
