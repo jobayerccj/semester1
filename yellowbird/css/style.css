@@ -78,8 +78,6 @@ label{
     width:60%;
 }
 
-
-
 .form-control-news {
   background-color: #fff;
   background-image: none;
@@ -240,11 +238,27 @@ footer p{
     padding-top: 30px;
 }
 
+.banner_img3{
+   padding-left: 35px; 
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .banner_img4{
+   padding-left: 35px; 
+}
+
+}
+
 @media screen and (max-width: 980px) {
     
     .top-menu1 ul li a{    
         font-size:10px;
     }
+    
+    .banner_img3{
+   padding-left: 0px; 
+}
 
 }
 
