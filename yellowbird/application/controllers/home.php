@@ -9,6 +9,13 @@ class Home extends CI_Controller {
             $this->load->view('footer');
 	}
         
+        public function home2()
+	{       
+            $this->load->view('header2');
+            $this->load->view('home');
+            $this->load->view('footer');
+	}
+        
         public function about()
         { 
             $this->load->model('Admin_db');

@@ -22,7 +22,7 @@
                         <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.jpg" alt="logo-yellowbird" style="width: 100%;"/></a>
                     </div>
                   
-                    <div class="col-lg-10 col-md-10 top-menu1">
+                    <div class="col-lg-10 col-md-10 top-menu2">
                         
                         <nav class="navbar navbar-default">
                             <div class="container-fluid">
@@ -38,11 +38,23 @@
                               </div>
 
                               <!-- Collect the nav links, forms, and other content for toggling -->
-                              <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse in" aria-expanded="true" style="">
-                                
+<!--                              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+                                <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse in" aria-expanded="true" style="">
                                 
                                 
                                 <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="./">Home</a></li>
+                                    <li><a href="http://5.101.105.32/yb/index.php/home/about">About us</a></li>
+
+                                    <li><a href="http://5.101.105.32/yb/index.php/home/estate_sales">Real Estate</a></li>
+                                    <li><a href="http://5.101.105.32/yb/index.php/home/estate_services">Estate Services</a></li>
+                                    <li><a href="http://5.101.105.32/yb/index.php/home/preservation">Preservation Services</a></li>
+                                    <li><a href="http://5.101.105.32/yb/index.php/home/blog">Blog</a></li>
+                                  
+                                </ul>
+                              </div>
+                                
+<!--                                <ul class="nav navbar-nav navbar-right">
                                     <li><a href="./">Home</a></li>
                                     <li><a href="<?php echo base_url();?>index.php/home/about">About us</a></li>
 
@@ -51,7 +63,7 @@
                                     <li><a href="<?php echo base_url();?>index.php/home/preservation">Preservation Services</a></li>
                                     <li><a href="<?php echo base_url();?>index.php/home/blog">Blog</a></li>
                                   
-                                </ul>
+                                </ul>-->
                               </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
                         </nav>
