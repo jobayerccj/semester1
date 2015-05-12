@@ -46,15 +46,15 @@
             <div class="row section2">
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <h2 class="text-center">Estate Sales</h2>
-                    <img src="<?php echo base_url();?>images/Estate-Sale-Tag4.jpg" alt="estate sales"/>
+                    <a href="<?php echo base_url();?>index.php/home/estate_sales"><img src="<?php echo base_url();?>images/Estate-Sale-Tag4.jpg" alt="estate sales"/></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <h2 class="text-center">Real Estate Services</h2>
-                    <img src="<?php echo base_url();?>images/For-Sale2.jpg" alt="estate sales"/>
+                    <a href="<?php echo base_url();?>index.php/home/estate_services"><img src="<?php echo base_url();?>images/For-Sale2.jpg" alt="estate sales"/></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <h2 class="text-center">Estate Preservation</h2>
-                    <img src="<?php echo base_url();?>images/Lawn2.jpg" alt="estate sales"/>
+                    <a href="<?php echo base_url();?>index.php/home/preservation"><img src="<?php echo base_url();?>images/Lawn2.jpg" alt="estate sales"/></a>
                 </div>
             </div>
         </div>

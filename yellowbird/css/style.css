@@ -21,11 +21,11 @@
     background: url(../images/about-menu2.jpg) no-repeat;
 }
 
-.top-menu1 ul li:nth-child(3) a{    
+.top-menu1 ul li:nth-child(4) a{    
     background: url(../images/estete-sales-menu.jpg) no-repeat;
 }
 
-.top-menu1 ul li:nth-child(4) a{    
+.top-menu1 ul li:nth-child(3) a{    
     background: url(../images/estete-services-menu.jpg) no-repeat;
 }
 
@@ -242,6 +242,20 @@ footer p{
    padding-left: 35px; 
 }
 
+.hb1 img{
+   width:100%;
+}
+
+/*.label-popup {
+  font-size: .7em;
+  font-style: italic;
+  font-weight: normal;
+}*/
+
+.label-popup{
+    width: 100%;
+}
+
 @media screen and (max-width: 1024px) {
     
     .banner_img4{
@@ -303,5 +317,19 @@ footer p{
 
     .top-menu1 ul li:nth-child(6) a{    
         background: #042b56;
+    }
+    .asol1{
+        text-align:center; 
+    }
+    .bbblink1{
+	margin:0 auto !important;
+    }
+
+   .hb1{
+	text-align:center;
+    }
+
+   .hb1 img{
+   	width:50%;
     }
 }
