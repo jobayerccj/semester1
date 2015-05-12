@@ -21,6 +21,31 @@ class Home extends CI_Controller {
             $this->load->model('Admin_db');
             $data['members'] = $this->Admin_db->all_member();  
             
+            $this->load->helper('captcha');
+            
+           /* $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://5.101.105.32/yb/captcha/',
+                'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+                'img_height' => 30,
+                'expiration' => 7200
+                );*/
+            
+           $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
+               'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+               'img_height' => 30,
+               'expiration' => 7200
+                );
+
+            $cap = create_captcha($vals);
+            $data['cap'] = $cap;
+           
             $this->load->view('header');
             $this->load->view('about', $data);
             $this->load->view('footer2');
@@ -47,6 +72,13 @@ class Home extends CI_Controller {
             $this->load->view('footer2');
         }
         
+        public function contact()
+        { 
+            $this->load->view('header');
+            $this->load->view('contact');
+            $this->load->view('footer2');
+        }
+        
         public function form1()
         { 
             $this->load->library('form_validation');
@@ -67,7 +99,7 @@ class Home extends CI_Controller {
                 //$this->session->set_userdata('error_msg', 'Thank you for your information, we will contact with you soon.'); 
                 $this->load->view('header');           
                 $this->load->view('form1', $data);
-                $this->load->view('footer2');
+                $this->load->view('footer');
             }
             else
             {   
@@ -81,7 +113,7 @@ class Home extends CI_Controller {
                 $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact with you soon.');                
                 $this->load->view('header');           
                 $this->load->view('home',$data);
-                $this->load->view('footer2');
+                $this->load->view('footer');
             }
             
             
@@ -91,67 +123,84 @@ class Home extends CI_Controller {
         { 
             $this->load->library('form_validation');
             
-            $data['name'] = $this->input->post('name');
-            $data['email'] = $this->input->post('email');
-            $data['phone'] = $this->input->post('phone');
-            $data['street_address'] = $this->input->post('street_address');
+            $data2['name'] = $this->input->post('name');
+            $data2['phone'] = $this->input->post('phone');
+            $data2['email'] = $this->input->post('email');
             
-            $data['street_address2'] = $this->input->post('street_address2');
-            $data['city'] = $this->input->post('city');
-            $data['state'] = $this->input->post('state');
-            $data['postal'] = $this->input->post('postal');
+            $data2['address'] = $this->input->post('address');
+            $data2['city'] = $this->input->post('city');
+            $data2['zip'] = $this->input->post('zip');
             
-            $data['country'] = $this->input->post('country');
-            $data['living_address'] = $this->input->post('living_address');
-            $data['hear_atlanta'] = $this->input->post('hear_atlanta');
-            $data['text'] = $this->input->post('text');
+            $data2['as_soon_as'] = $this->input->post('as_soon_as');
+            $data2['4_6_weeks'] = $this->input->post('4_6_weeks');
+            $data2['6_12_weeks'] = $this->input->post('6_12_weeks');
+            $data2['more_then_3'] = $this->input->post('more_then_3');
             
-            $data['appraisal_value'] = $this->input->post('appraisal_value');
-            $data['how_long'] = $this->input->post('how_long');
-            $data['how_much'] = $this->input->post('how_much');
-            $data['improvements'] = $this->input->post('improvements');
+            $data2['full_home'] = $this->input->post('full_home');
+            $data2['downsizing'] = $this->input->post('downsizing');
+            $data2['moving'] = $this->input->post('moving');
             
-            $data['type_of_repairs'] = $this->input->post('type_of_repairs');
-            $data['first_mortgage'] = $this->input->post('first_mortgage');
-            $data['what_is_first_mortgage'] = $this->input->post('what_is_first_mortgage');
-            $data['taxes_included'] = $this->input->post('taxes_included');
+            $data2['accessories'] = $this->input->post('accessories');
+            $data2['art'] = $this->input->post('art');
+            $data2['china'] = $this->input->post('china');           
+            $data2['clothing'] = $this->input->post('clothing');
+            $data2['crystal'] = $this->input->post('crystal');
+            $data2['firearms'] = $this->input->post('firearms');
             
-            $data['payments_behind'] = $this->input->post('payments_behind');
-            $data['reason_for_selling'] = $this->input->post('reason_for_selling');
-            $data['lowest_asking_price'] = $this->input->post('lowest_asking_price');
-            $data['best_lowest_asking_price'] = $this->input->post('best_lowest_asking_price');
-            $data['bedrooms'] = $this->input->post('bedrooms');
-            $data['square_footage'] = $this->input->post('square_footage');
-            $data['home_was_built'] = $this->input->post('home_was_built');
-            $data['have_a_garage'] = $this->input->post('have_a_garage');
-            $data['comments'] = $this->input->post('comments');
+            $data2['furniture'] = $this->input->post('furniture');
+            $data2['garage_sales'] = $this->input->post('garage_sales');
+            $data2['gold'] = $this->input->post('gold');
             
-            $this->form_validation->set_rules('name', 'Name', 'trim');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-            $this->form_validation->set_rules('phone', 'Phone', 'trim');
-            $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean');
-           
+            $data2['jewelery'] = $this->input->post('jewelery');
+            $data2['kitchen'] = $this->input->post('kitchen');
+            $data2['outdoor'] = $this->input->post('outdoor');
+            $data2['rugs'] = $this->input->post('rugs');
+            $data2['sporting'] = $this->input->post('sporting');
+            $data2['tools'] = $this->input->post('tools');
+            $data2['vehicles'] = $this->input->post('vehicles');
+            
+            $data3['captcha1'] = $this->input->post('captcha1');
+            $data3['captcha2'] = $this->input->post('captcha2');
+            
+            //$data2['captcha1'] = $this->input->post('captcha1');
+            
+            $this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|xss_clean');
+            $this->form_validation->set_rules('phone', 'Phone', 'trim|xss_clean');
+            
+            $this->form_validation->set_rules('address', 'Address', 'trim|xss_clean');
+            $this->form_validation->set_rules('city', 'City', 'trim|xss_clean');
+            $this->form_validation->set_rules('zip', 'ZIP', 'trim|xss_clean');
 
-            if ($this->form_validation->run() == FALSE)
+            if ($this->form_validation->run() == FALSE || $data3['captcha1'] != $data3['captcha2'])
             {   
                 //$this->session->set_userdata('error_msg', 'Thank you for your information, we will contact with you soon.'); 
-                $this->load->view('header');           
-                $this->load->view('form1', $data);
-                $this->load->view('footer2');
+                
+                /*$this->load->view('header');           
+                $this->load->view('about');
+                $this->load->view('footer2');*/
+                $data2['pop_error'] = "Sorry, you have problem with your data, please re enter it.";
+                $this->session->set_userdata('new_data',$data2);
+                
+                redirect('home/about');
             }
+            
+            
             else
             {   
                 $this->load->model('Newsletter');
                 
-                $this->Newsletter->insert_more_info($data); 
-                $to = $data['email'];
+                $this->Newsletter->insert_click_here($data2); 
+                $to = $data2['email'];
                 $message = "Thank you for contacting with us. we will inform you about it within a short time.";
                 mail($to,"Contact with Yellow Bird",$message);
                 
+                $this->session->sess_destroy(); 
+                
                 $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact with you soon.');                
                 $this->load->view('header');           
-                $this->load->view('home',$data);
-                $this->load->view('footer2');
+                $this->load->view('home',$data2);
+                $this->load->view('footer');
             }
             
             

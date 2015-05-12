@@ -21,19 +21,15 @@
     background: url(../images/about-menu2.jpg) no-repeat;
 }
 
-.top-menu1 ul li:nth-child(4) a{    
-    background: url(../images/estete-sales-menu.jpg) no-repeat;
-}
-
-.top-menu1 ul li:nth-child(3) a{    
-    background: url(../images/estete-services-menu.jpg) no-repeat;
-}
-
-.top-menu1 ul li:nth-child(5) a{    
-    background: url(../images/preservation-menu.jpg) no-repeat;
+.top-menu1 ul li:nth-child(3) a, .top-menu1 ul li:nth-child(4) a, .top-menu1 ul li:nth-child(5) a{    
+     background: url(../images/estete-sales-menu.jpg) no-repeat;
 }
 
 .top-menu1 ul li:nth-child(6) a{    
+    background: url(../images/preservation-menu.jpg) no-repeat;
+}
+
+.top-menu1 ul li:nth-child(7) a{    
     background: url(../images/blog-menu.jpg) no-repeat;
 }
 
@@ -312,10 +308,14 @@ footer p{
     }
 
     .top-menu1 ul li:nth-child(5) a{    
-        background: #042b56;
+        background: #0179b8;
     }
 
     .top-menu1 ul li:nth-child(6) a{    
+        background: #042b56;
+    }
+    
+    .top-menu1 ul li:nth-child(7) a{    
         background: #042b56;
     }
     .asol1{

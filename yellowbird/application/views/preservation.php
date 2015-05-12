@@ -43,10 +43,11 @@
                     <div class="col-lg-12">
                         <h4>Special Attention</h4>
                         <p>
-                            
-Securing the property and debris removal. 
-Especially important is ensuring that you avoid excess fines by cities or counties for being non-compliant due to high weed growth (fire danger). 
-All work is documented with digital photos, explanations of the scope of work and a bid to bring to sellable condition.
+                            Yellow Bird pays special attention to any property we are retained to look after. 
+                            We start by securing the property, maintaining the yard and work hard to give the property a “lived in” look. 
+                            This is part of our A to Z commitment to our customers. 
+                            All work is documented with digital photos, explanations of the scope of work and a bid to bring to property to, or maintain the property in, a sellable condition.
+
                         </p>
                     </div>
                 </div>
