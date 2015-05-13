@@ -73,7 +73,7 @@
                     //print_r ($this->session->userdata('new_data'));
                     $newdata = $this->session->userdata('new_data');
                     if($newdata['pop_error']){
-                        echo '<center>'.$newdata['pop_error'].'</center>';
+                        echo '<center><b>'.$newdata['pop_error'].'</b></center>';
                     }
                   ?>
                 

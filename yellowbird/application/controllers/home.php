@@ -52,31 +52,140 @@ class Home extends CI_Controller {
         }
         
         public function estate_sales()
-        { 
+        {   
+            $this->load->helper('captcha');
+            
+           /* $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://5.101.105.32/yb/captcha/',
+                'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+                'img_height' => 30,
+                'expiration' => 7200
+                );*/
+            
+           $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
+               'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+               'img_height' => 30,
+               'expiration' => 7200
+                );
+
+            $cap = create_captcha($vals);
+            $data['cap'] = $cap;
+            //$data['page'] = "estate_services";
+           
             $this->load->view('header');
-            $this->load->view('estate_sales');
+            $this->load->view('estate_sales', $data);
             $this->load->view('footer2');
+            
+            
         }
         
         public function estate_services()
-        { 
+        {   
+            $this->load->helper('captcha');
+            
+           /* $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://5.101.105.32/yb/captcha/',
+                'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+                'img_height' => 30,
+                'expiration' => 7200
+                );*/
+            
+           $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
+               'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+               'img_height' => 30,
+               'expiration' => 7200
+                );
+
+            $cap = create_captcha($vals);
+            $data['cap'] = $cap;
+            $data['page'] = "estate_services";
+           
             $this->load->view('header');
-            $this->load->view('estate_services');
+            $this->load->view('estate_services', $data);
             $this->load->view('footer2');
+            
+            
         }
         
         public function preservation()
-        { 
+        {   
+           $this->load->helper('captcha');
+            
+           /* $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://5.101.105.32/yb/captcha/',
+                'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+                'img_height' => 30,
+                'expiration' => 7200
+                );*/
+            
+           $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
+               'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+               'img_height' => 30,
+               'expiration' => 7200
+                );
+
+            $cap = create_captcha($vals);
+            $data['cap'] = $cap;
+            
             $this->load->view('header');
-            $this->load->view('preservation');
-            $this->load->view('footer2');
+            $this->load->view('preservation', $data);
+            $this->load->view('footer2'); 
+           
         }
         
         public function contact()
-        { 
+        {   
+            $this->load->helper('captcha');
+            
+           /* $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://5.101.105.32/yb/captcha/',
+                'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+                'img_height' => 30,
+                'expiration' => 7200
+                );*/
+            
+           $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
+               'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+               'img_height' => 30,
+               'expiration' => 7200
+                );
+
+            $cap = create_captcha($vals);
+            $data['cap'] = $cap;
+            
             $this->load->view('header');
-            $this->load->view('contact');
-            $this->load->view('footer2');
+            $this->load->view('contact', $data);
+            $this->load->view('footer2'); 
+            
+            
         }
         
         public function form1()
@@ -162,6 +271,8 @@ class Home extends CI_Controller {
             $data3['captcha1'] = $this->input->post('captcha1');
             $data3['captcha2'] = $this->input->post('captcha2');
             
+            $page = $this->input->post('page');
+            
             //$data2['captcha1'] = $this->input->post('captcha1');
             
             $this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean');
@@ -182,7 +293,26 @@ class Home extends CI_Controller {
                 $data2['pop_error'] = "Sorry, you have problem with your data, please re enter it.";
                 $this->session->set_userdata('new_data',$data2);
                 
-                redirect('home/about');
+                if($page == 'estate_services')
+                {
+                   redirect('home/estate_services'); 
+                }
+                else if($page == 'estate_sales')
+                {
+                   redirect('home/estate_sales'); 
+                }
+                else if($page == 'preservation')
+                {
+                   redirect('home/preservation'); 
+                }
+                else if($page == 'contact')
+                {
+                   redirect('home/contact'); 
+                }
+                else{
+                    redirect('home/about'); 
+                }
+                
             }
             
             
