@@ -75,9 +75,11 @@
                     if($newdata['pop_error']){
                         echo '<center><b>'.$newdata['pop_error'].'</b></center>';
                     }
+                    
+                    
                   ?>
                 
-                
+                <?php echo validation_errors();  ?>
                 <div class="col-lg-12 text-center more-info">
                     <!-- Button trigger modal -->
                     <button type="button"  data-toggle="modal" data-target="#myModal" style="border:none; background: transparent;">

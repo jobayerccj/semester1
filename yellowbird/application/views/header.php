@@ -73,7 +73,7 @@
                             <img src="<?php echo base_url();?>images/hba.jpg" alt="Home Builders" />
                         </a>
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-2 asol1" >
+                    <div class="col-lg-2 col-md-1 col-sm-2 asol1" >
                         <a href="http://www.aselonline.com/">
                             <img src="<?php echo base_url();?>images/american-society-of-estate.jpg" alt="american-society-of-estate"/>
                         </a>

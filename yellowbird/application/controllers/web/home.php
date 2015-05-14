@@ -22,8 +22,8 @@ class Home extends CI_Controller {
             $data['members'] = $this->Admin_db->all_member();  
             
             $this->load->helper('captcha');
-            $this->load->library('form_validation');
-           /* $vals = array(
+            
+         $vals = array(
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
@@ -31,17 +31,9 @@ class Home extends CI_Controller {
                 'img_width' => '150',
                 'img_height' => 30,
                 'expiration' => 7200
-                );*/
-            
-           $vals = array(
-                'word' => '',
-                'img_path' => './captcha/',
-                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
-               'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-               'img_height' => 30,
-               'expiration' => 7200
                 );
+            
+           
 
             $cap = create_captcha($vals);
             $data['cap'] = $cap;
@@ -55,7 +47,7 @@ class Home extends CI_Controller {
         {   
             $this->load->helper('captcha');
             
-           /* $vals = array(
+            $vals = array(
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
@@ -63,18 +55,9 @@ class Home extends CI_Controller {
                 'img_width' => '150',
                 'img_height' => 30,
                 'expiration' => 7200
-                );*/
-            
-           $vals = array(
-                'word' => '',
-                'img_path' => './captcha/',
-                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
-               'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-               'img_height' => 30,
-               'expiration' => 7200
                 );
-
+            
+           
             $cap = create_captcha($vals);
             $data['cap'] = $cap;
             //$data['page'] = "estate_services";
@@ -90,7 +73,7 @@ class Home extends CI_Controller {
         {   
             $this->load->helper('captcha');
             
-           /* $vals = array(
+            $vals = array(
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
@@ -98,17 +81,9 @@ class Home extends CI_Controller {
                 'img_width' => '150',
                 'img_height' => 30,
                 'expiration' => 7200
-                );*/
-            
-           $vals = array(
-                'word' => '',
-                'img_path' => './captcha/',
-                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
-               'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-               'img_height' => 30,
-               'expiration' => 7200
                 );
+            
+           
 
             $cap = create_captcha($vals);
             $data['cap'] = $cap;
@@ -125,7 +100,7 @@ class Home extends CI_Controller {
         {   
            $this->load->helper('captcha');
             
-           /* $vals = array(
+            $vals = array(
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
@@ -133,17 +108,9 @@ class Home extends CI_Controller {
                 'img_width' => '150',
                 'img_height' => 30,
                 'expiration' => 7200
-                );*/
-            
-           $vals = array(
-                'word' => '',
-                'img_path' => './captcha/',
-                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
-               'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-               'img_height' => 30,
-               'expiration' => 7200
                 );
+            
+           
 
             $cap = create_captcha($vals);
             $data['cap'] = $cap;
@@ -158,7 +125,7 @@ class Home extends CI_Controller {
         {   
             $this->load->helper('captcha');
             
-           /* $vals = array(
+            $vals = array(
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
@@ -166,18 +133,9 @@ class Home extends CI_Controller {
                 'img_width' => '150',
                 'img_height' => 30,
                 'expiration' => 7200
-                );*/
-            
-           $vals = array(
-                'word' => '',
-                'img_path' => './captcha/',
-                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
-               'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-               'img_height' => 30,
-               'expiration' => 7200
                 );
-
+            
+           
             $cap = create_captcha($vals);
             $data['cap'] = $cap;
             
@@ -278,14 +236,15 @@ class Home extends CI_Controller {
             //$data2['captcha1'] = $this->input->post('captcha1');
             
             $this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|xss_cleanxss_clean|callback_check_duplicate_email[' . $email . ']');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|xss_clean|callback_check_duplicate_email[' . $email . ']');
             $this->form_validation->set_rules('phone', 'Phone', 'trim|xss_clean');
-              
+            
             $this->form_validation->set_rules('address', 'Address', 'trim|xss_clean');
             $this->form_validation->set_rules('city', 'City', 'trim|xss_clean');
             $this->form_validation->set_rules('zip', 'ZIP', 'trim|xss_clean');
             
             $this->form_validation->set_message('check_duplicate_email', 'This email is already exist. Please write a new email.');
+            
             
             if ($this->form_validation->run() == FALSE || $data3['captcha1'] != $data3['captcha2'])
             {   
@@ -341,11 +300,11 @@ class Home extends CI_Controller {
         }
         
         public function check_duplicate_email($post_email) {
-            
             $this->load->model('Newsletter');
             return $this->Newsletter->checkDuplicateEmail($post_email);
 
         }
+
         
         public function newsletter()
         { 
@@ -361,7 +320,6 @@ class Home extends CI_Controller {
             $data['email'] = $this->input->post('email');
             $data['first_name'] = $this->input->post('first_name');
             $data['last_name'] = $this->input->post('last_name');
-            
             
             
             $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');

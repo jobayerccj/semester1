@@ -234,13 +234,17 @@ footer p{
     padding-top: 30px;
 }
 
-.banner_img3{
+/*.banner_img3{
    padding-left: 35px; 
-}
+}*/
 
 .hb1 img{
    width:100%;
 }
+
+.asol1{
+        text-align:center; 
+    }
 
 /*.label-popup {
   font-size: .7em;

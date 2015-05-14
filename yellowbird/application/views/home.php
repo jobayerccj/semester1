@@ -6,7 +6,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 form-part">
                     <h1 class="form_h1">Want More Info?</h1>
                     <?php                        
-                            echo $this->session->userdata('success_msg');  
+                            echo '<b>'.$this->session->userdata('success_msg').'</b>';  
                             
                             $this->session->unset_userdata('success_msg');
                         
@@ -46,11 +46,11 @@
             <div class="row section2">
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <h2 class="text-center">Estate Sales</h2>
-                    <a href="<?php echo base_url();?>index.php/home/estate_sales"><img src="<?php echo base_url();?>images/Estate-Sale-Tag4.jpg" alt="estate sales"/></a>
+                    <a href="<?php echo base_url();?>index.php/home/estate_services"><img src="<?php echo base_url();?>images/Estate-Sale-Tag4.jpg" alt="estate sales"/></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <h2 class="text-center">Real Estate Services</h2>
-                    <a href="<?php echo base_url();?>index.php/home/estate_services"><img src="<?php echo base_url();?>images/For-Sale2.jpg" alt="estate sales"/></a>
+                    <a href="<?php echo base_url();?>index.php/home/estate_sales"><img src="<?php echo base_url();?>images/For-Sale2.jpg" alt="estate sales"/></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <h2 class="text-center">Estate Preservation</h2>

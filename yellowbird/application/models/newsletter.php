@@ -20,5 +20,20 @@ class Newsletter extends CI_Model {
         $this->db->insert('newsletter', $data);
     }
     
+    public function checkDuplicateEmail($email) {
+
+        $this->db->where('email', $email);
+
+        $query = $this->db->get('click_here');
+
+        $count_row = $query->num_rows();
+
+        if ($count_row > 0) {
+          return FALSE; 
+         } else {         
+            return TRUE; 
+         }
+}
+    
     
 }
