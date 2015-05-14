@@ -27,9 +27,9 @@ class Home extends CI_Controller {
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
-                'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-                'img_height' => 30,
+                'font_size' => 20,
+                'img_width' => '340',
+                'img_height' => '60',
                 'expiration' => 7200
                 );
             
@@ -51,9 +51,9 @@ class Home extends CI_Controller {
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
-                'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-                'img_height' => 30,
+                'font_size' => 20,
+                'img_width' => '340',
+                'img_height' => '60',
                 'expiration' => 7200
                 );
             
@@ -77,9 +77,9 @@ class Home extends CI_Controller {
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
-                'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-                'img_height' => 30,
+                'font_size' => 20,
+                'img_width' => '340',
+                'img_height' => '60',
                 'expiration' => 7200
                 );
             
@@ -104,9 +104,9 @@ class Home extends CI_Controller {
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
-                'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-                'img_height' => 30,
+                'font_size' => 20,
+                'img_width' => '340',
+                'img_height' => '60',
                 'expiration' => 7200
                 );
             
@@ -129,9 +129,9 @@ class Home extends CI_Controller {
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://5.101.105.32/yb/captcha/',
-                'font_path' => './path/to/fonts/texb.ttf',
-                'img_width' => '150',
-                'img_height' => 30,
+                'font_size' => 20,
+                'img_width' => '340',
+                'img_height' => '60',
                 'expiration' => 7200
                 );
             
@@ -155,14 +155,20 @@ class Home extends CI_Controller {
             $data['phone'] = $this->input->post('phone');
             $data['subject'] = $this->input->post('subject');
             
+            $email = $this->input->post('email');
+            
+            //echo 'test';exit;
+            
             $this->form_validation->set_rules('name', 'Name', 'trim');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_check_duplicate_email2[' . $email . ']');
             $this->form_validation->set_rules('phone', 'Phone', 'trim');
             $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean');
            
-
+            $this->form_validation->set_message('check_duplicate_email2', 'This email is already exist. Please write a new email.');
+            
             if ($this->form_validation->run() == FALSE)
             {   
+                
                 //$this->session->set_userdata('error_msg', 'Thank you for your information, we will contact with you soon.'); 
                 $this->load->view('header');           
                 $this->load->view('form1', $data);
@@ -302,7 +308,16 @@ class Home extends CI_Controller {
         public function check_duplicate_email($post_email) {
             $this->load->model('Newsletter');
             return $this->Newsletter->checkDuplicateEmail($post_email);
-
+        }
+        
+        public function check_duplicate_email2($post_email) {
+            $this->load->model('Newsletter');
+            return $this->Newsletter->checkDuplicateEmail2($post_email);
+        }
+        
+        public function check_duplicate_email3($post_email) {
+            $this->load->model('Newsletter');
+            return $this->Newsletter->checkDuplicateEmail3($post_email);
         }
 
         
@@ -321,11 +336,13 @@ class Home extends CI_Controller {
             $data['first_name'] = $this->input->post('first_name');
             $data['last_name'] = $this->input->post('last_name');
             
+            $email = $this->input->post('email');
             
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_check_duplicate_email3[' . $email . ']');
             $this->form_validation->set_rules('first_name', 'First name', 'trim|xss_clean');
             $this->form_validation->set_rules('last_name', 'Last name', 'trim|xss_clean');
            
+            $this->form_validation->set_message('check_duplicate_email', 'This email is already exist. Please write a new email.');
 
             if ($this->form_validation->run() == FALSE)
             {   

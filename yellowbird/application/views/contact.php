@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row section1">
                 <div class="col-lg-12 text-center">
-                    <img src="<?php echo base_url();?>images/Lawn.jpg" alt="Lawn"/>
+                    <img src="<?php echo base_url();?>images/Phone-Booth 2.jpg" alt="Lawn"/>
                 </div>
                
             </div>

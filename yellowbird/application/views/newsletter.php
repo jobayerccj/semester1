@@ -4,7 +4,7 @@
                 <div class="col-lg-offset-2 col-lg-6 col-md-6 col-sm-6">
                     <h2 >YellowBird Estate Sales Email Friends</h2>
                     <p>Keep in touch with all the goings on YellowBird. Sign on here to start receiving our email updates</p>
-                    <p></p>
+                    <?php echo validation_errors(); ?>
                    
                     <form action="<?php echo base_url();?>index.php/home/newsletter2" method="post"/>
                         

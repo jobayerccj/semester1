@@ -33,7 +33,37 @@ class Newsletter extends CI_Model {
          } else {         
             return TRUE; 
          }
-}
+    }
+    
+    public function checkDuplicateEmail2($email) {
+
+        $this->db->where('email', $email);
+
+        $query = $this->db->get('more_info');
+
+        $count_row = $query->num_rows();
+
+        if ($count_row > 0) {
+          return FALSE; 
+         } else {         
+            return TRUE; 
+         }
+    }
+    
+    public function checkDuplicateEmail3($email) {
+
+        $this->db->where('email', $email);
+
+        $query = $this->db->get('newsletter');
+
+        $count_row = $query->num_rows();
+
+        if ($count_row > 0) {
+          return FALSE; 
+         } else {         
+            return TRUE; 
+         }
+    }
     
     
 }

@@ -197,11 +197,14 @@ class Home extends CI_Controller {
             $data['phone'] = $this->input->post('phone');
             $data['subject'] = $this->input->post('subject');
             
+            $email = $this->input->post('email');
+            
             $this->form_validation->set_rules('name', 'Name', 'trim');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_check_duplicate_email2[' . $email . ']');
             $this->form_validation->set_rules('phone', 'Phone', 'trim');
             $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean');
            
+            $this->form_validation->set_message('check_duplicate_email2', 'This email is already exist. Please write a new email.');
 
             if ($this->form_validation->run() == FALSE)
             {   
@@ -347,6 +350,16 @@ class Home extends CI_Controller {
 
         }
         
+        public function check_duplicate_email2($post_email) {
+            $this->load->model('Newsletter');
+            return $this->Newsletter->checkDuplicateEmail2($post_email);
+        }
+        
+        public function check_duplicate_email3($post_email) {
+            $this->load->model('Newsletter');
+            return $this->Newsletter->checkDuplicateEmail3($post_email);
+        }
+        
         public function newsletter()
         { 
             $this->load->view('header');
@@ -362,12 +375,13 @@ class Home extends CI_Controller {
             $data['first_name'] = $this->input->post('first_name');
             $data['last_name'] = $this->input->post('last_name');
             
+            $email = $this->input->post('email');
             
-            
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_check_duplicate_email3[' . $email . ']');
             $this->form_validation->set_rules('first_name', 'First name', 'trim|xss_clean');
             $this->form_validation->set_rules('last_name', 'Last name', 'trim|xss_clean');
            
+            $this->form_validation->set_message('check_duplicate_email', 'This email is already exist. Please write a new email.');
 
             if ($this->form_validation->run() == FALSE)
             {   
