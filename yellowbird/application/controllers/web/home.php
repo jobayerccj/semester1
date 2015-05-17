@@ -22,7 +22,7 @@ class Home extends CI_Controller {
             $data['members'] = $this->Admin_db->all_member();  
             
             $this->load->helper('captcha');
-            
+            $this->load->library('form_validation');
          $vals = array(
                 'word' => '',
                 'img_path' => './captcha/',
@@ -179,17 +179,46 @@ class Home extends CI_Controller {
                 $this->load->model('Newsletter');
                 
                 $this->Newsletter->insert_more_info($data); 
-                $to = $data['email'];
-                $message = "Thank you for contacting with us. we will inform you about it within a short time.";
-                mail($to,"Contact with Yellow Bird",$message);
                 
-                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact with you soon.');                
+                $from = $data['email'];
+               
+                //$email1 = $data['email'];
+                
+                //$message = "Thank you for contacting with us. we will inform you about it within a short time.";
+                $name = $data['name'];
+                $phone = $data['phone'];
+                $subject = $data['subject']. "<br/>Name: ". $name. "<br/>Phone: ".$phone;
+               
+                $config = Array(		
+                     'protocol' => 'smtp',
+                     'smtp_host' => 'ssl://smtp.googlemail.com',
+                     'smtp_port' => 465,
+                     'smtp_user' => 'jobayer@unitechbd.com',
+                     'smtp_pass' => 'jobayer123456',
+                     'smtp_timeout' => '4',
+                     'mailtype'  => 'html', 
+                     'charset'   => 'iso-8859-1'
+                 );
+ 
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+                
+                $this->email->from($from);
+                $this->email->to("mgayellowbird@hotmail.com");
+                $this->email->cc("mwayellowbird@gmail.com");
+                $this->email->reply_to($from); 
+
+                $this->email->subject("Contact with YelloBird");
+                $this->email->message($subject); 
+
+                $this->email->send();
+              
+                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact soon.');                
                 $this->load->view('header');           
                 $this->load->view('home',$data);
                 $this->load->view('footer');
             }
-            
-            
+        
         }
         
         public function form2()

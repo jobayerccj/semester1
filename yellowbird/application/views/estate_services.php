@@ -18,18 +18,18 @@
                 
                <div class="col-lg-9">
                    <h1>Estate Sales and Liquidation Services</h1>
-                   <p>We Provide Many Resources to Those Looking to Sel Their Estate Including:</p>
+                   <p>We Provide Many Resources to Those Looking to Sell Their Estate Including:</p>
                    <ul>
-                       <li>Free Consultation to help you determine the best course of action for your Estate needs. </li>
-                       <li>We can help you with the entire Estate: Personal Property, Automibiles, Campers, Jewelry, Firearms, Real Estate ... and mcuh more.</li>
+                       <li><b><em>Free Consultation</em></b> to help you determine the best course of action for Estate needs. </li>
+                       <li>We can help you with the entire Estate: Personal Property, Automobiles, Campers, Jewelry, Firearms, Real Estate ... and much more.</li>
                        <li>Pre-Sale Clean-outs & Trash Removal as needed.</li>
                        <li>Sort, Display and Price all items to enhance the value of each item.</li>
-                       <li>Massive Exposure in Estatesales.net, EstateSales.org, Local Newspapers, Craigslist, and More...PLUS we send notification to our own LARGE Customer E-mail list.</li>
+                       <li><b>Massive Exposure</b> in Estatesales.net, EstateSales.org, Local Craigslist, and More...PLUS we send notification to our own LARGE Customer E-mail list.</li>
                        <li>Yard and Directional Signs based on local codes and laws.</li>
                        <li>Depending on your wishes we can offer complete clean-outs upon sales completion.</li>
-                       <li>Donations to local charties for tax credits back to you of any items that do not sell (Goodwill, Salvation Army, Veterans Associations, ReStore and others).</li>
+                       <li>Donations to local charities for tax credits back to you of any items that do not sell (Goodwill, Salvation Army, Veterans Associations, ReStore and others).</li>
                        <li>We also offer you a wide range of Real Estate Services (We do it all, everything from buying your house in "As Is" condition, to helping you bring your home up to date and ready for sale, to listing your Home for Sale.</li>
-                       <li>We follow Uniform Standards of Professional Appraisal Practice (USPAP) guidelines.</li>
+                       <li>We follow Uniform Standards of Professional Appraisal Practice guidelines.</li>
                    </ul>
                 </div>
             </div>

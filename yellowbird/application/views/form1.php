@@ -5,7 +5,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 form-part">
                     <h1 class="form_h1">Want More Info?</h1>
-                    <p>Interested in more information about a specific sale on our website</p>
+                    <p>&nbsp;</p>
                     <?php echo validation_errors(); ?>
                     <form action="<?php echo base_url();?>index.php/home/form1" method="post"/>
                         

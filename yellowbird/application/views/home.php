@@ -5,13 +5,14 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 form-part">
                     <h1 class="form_h1">Want More Info?</h1>
-                    <?php                        
+                    <?php  
+                            
                             echo '<b>'.$this->session->userdata('success_msg').'</b>';  
                             
                             $this->session->unset_userdata('success_msg');
                         
                     ?>                       
-                    <p class="form_p">Interested in more information about a specific sale on our website</p>
+                    <p class="form_p">&nbsp;</p>
                     
                     <form action="<?php echo base_url();?>index.php/home/form1" method="post"/>
                         

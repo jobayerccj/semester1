@@ -222,7 +222,7 @@ class Home extends CI_Controller {
                 $message = "Thank you for contacting with us. we will inform you about it within a short time.";
                 mail($to,"Contact with Yellow Bird",$message);
                 
-                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact with you soon.');                
+                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact soon.');                
                 $this->load->view('header');           
                 $this->load->view('home',$data);
                 $this->load->view('footer');
