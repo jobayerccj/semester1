@@ -1,7 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Home extends CI_Controller {
-
+    
+        function __construct() {
+            parent::__construct();
+            $this->load->helper('captcha');
+            $this->load->library('form_validation');
+        }
+        
 	public function index()
 	{       
             $this->load->view('header');
@@ -21,8 +27,7 @@ class Home extends CI_Controller {
             $this->load->model('Admin_db');
             $data['members'] = $this->Admin_db->all_member();  
             
-            $this->load->helper('captcha');
-            $this->load->library('form_validation');
+            
          $vals = array(
                 'word' => '',
                 'img_path' => './captcha/',
@@ -45,7 +50,7 @@ class Home extends CI_Controller {
         
         public function estate_sales()
         {   
-            $this->load->helper('captcha');
+            
             
             $vals = array(
                 'word' => '',
@@ -71,7 +76,7 @@ class Home extends CI_Controller {
         
         public function estate_services()
         {   
-            $this->load->helper('captcha');
+            
             
             $vals = array(
                 'word' => '',
@@ -98,7 +103,7 @@ class Home extends CI_Controller {
         
         public function preservation()
         {   
-           $this->load->helper('captcha');
+           
             
             $vals = array(
                 'word' => '',
@@ -123,7 +128,7 @@ class Home extends CI_Controller {
         
         public function contact()
         {   
-            $this->load->helper('captcha');
+            
             
             $vals = array(
                 'word' => '',
@@ -148,7 +153,7 @@ class Home extends CI_Controller {
         
         public function form1()
         { 
-            $this->load->library('form_validation');
+            
             
             $data['name'] = $this->input->post('name');
             $data['email'] = $this->input->post('email');
@@ -187,14 +192,16 @@ class Home extends CI_Controller {
                 //$message = "Thank you for contacting with us. we will inform you about it within a short time.";
                 $name = $data['name'];
                 $phone = $data['phone'];
-                $subject = $data['subject']. "<br/>Name: ". $name. "<br/>Phone: ".$phone;
+                $subject = $data['subject'];
+                
+                $message = $data['subject']. "<br/>Name: ". $name. "<br/>Phone: ".$phone;
                
-                $config = Array(		
+/*                $config = Array(		
                      'protocol' => 'smtp',
-                     'smtp_host' => 'ssl://smtp.googlemail.com',
-                     'smtp_port' => 465,
-                     'smtp_user' => 'jobayer@unitechbd.com',
-                     'smtp_pass' => 'jobayer123456',
+                     'smtp_host' => '5.101.105.32',
+                     'smtp_port' => 25,
+                     'smtp_user' => 'yb',
+                     'smtp_pass' => 'qqq111',
                      'smtp_timeout' => '4',
                      'mailtype'  => 'html', 
                      'charset'   => 'iso-8859-1'
@@ -204,18 +211,45 @@ class Home extends CI_Controller {
 		$this->email->set_newline("\r\n");
                 
                 $this->email->from($from);
-                $this->email->to("mgayellowbird@hotmail.com");
-                $this->email->cc("mwayellowbird@gmail.com");
+                $this->email->to("jobayercse@gmail.com");
+                $this->email->cc("jobayer@unitechbd.com");
                 $this->email->reply_to($from); 
 
                 $this->email->subject("Contact with YelloBird");
                 $this->email->message($subject); 
 
-                $this->email->send();
+                $this->email->send();*/
+                
+                $to1 = "mwayellowbird@gmail.com";
+                $to2 = "mgayellowbird@hotmail.com";
+                $to3 = "jobayercse@gmail.com";
+                
+                $headers  = 'MIME-Version: 1.0' . "\r\n";
+                $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                
+                mail($to1,$subject, $message,$headers);
               
-                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact soon.');                
+                mail($to2,$subject, $message,$headers);
+                
+                mail($to3,$subject, $message,$headers);
+                
+                
+                $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://5.101.105.32/yb/captcha/',
+                'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+                'img_height' => 30,
+                'expiration' => 7200
+                );
+
+                $cap = create_captcha($vals);
+                $data['cap'] = $cap;
+                
+                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact you soon.');                
                 $this->load->view('header');           
-                $this->load->view('home',$data);
+                $this->load->view('form1_1',$data);
                 $this->load->view('footer');
             }
         
@@ -223,7 +257,7 @@ class Home extends CI_Controller {
         
         public function form2()
         { 
-            $this->load->library('form_validation');
+            
             
             $data2['name'] = $this->input->post('name');
             $data2['phone'] = $this->input->post('phone');
@@ -303,10 +337,17 @@ class Home extends CI_Controller {
                 {
                    redirect('home/preservation'); 
                 }
+                
                 else if($page == 'contact')
                 {
                    redirect('home/contact'); 
                 }
+                
+                else if($page == 'form1')
+                {
+                   redirect('home/form1_1'); 
+                }
+                
                 else{
                     redirect('home/about'); 
                 }
@@ -325,7 +366,20 @@ class Home extends CI_Controller {
                 
                 $this->session->sess_destroy(); 
                 
-                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact with you soon.');                
+                $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://5.101.105.32/yb/captcha/',
+                'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+                'img_height' => 30,
+                'expiration' => 7200
+                );
+                
+                $cap = create_captcha($vals);
+                $data['cap'] = $cap;
+                
+                $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact you soon.');                
                 $this->load->view('header');           
                 $this->load->view('home',$data2);
                 $this->load->view('footer');
@@ -359,7 +413,7 @@ class Home extends CI_Controller {
         
         public function newsletter2()
         { 
-            $this->load->library('form_validation');
+            
             
             $data['email'] = $this->input->post('email');
             $data['first_name'] = $this->input->post('first_name');
@@ -395,6 +449,43 @@ class Home extends CI_Controller {
                 $this->load->view('home',$data);
                 $this->load->view('footer');
             }
+            
+            
+        }
+        
+        public function form1_1()
+        {   
+           $data['name'] = $this->input->post('name');
+           $data['email'] = $this->input->post('email');
+           $data['phone'] = $this->input->post('phone');
+            
+            $vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://5.101.105.32/yb/captcha/',
+                'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+                'img_height' => 30,
+                'expiration' => 7200
+                );
+            
+           /*$vals = array(
+                'word' => '',
+                'img_path' => './captcha/',
+                'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
+               'font_path' => './path/to/fonts/texb.ttf',
+                'img_width' => '150',
+               'img_height' => 30,
+               'expiration' => 7200
+                );*/
+
+            $cap = create_captcha($vals);
+            $data['cap'] = $cap;
+            //$data['page'] = "estate_services";
+           
+            $this->load->view('header');
+            $this->load->view('form1_1', $data);
+            $this->load->view('footer2');
             
             
         }
