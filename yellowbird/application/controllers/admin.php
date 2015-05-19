@@ -99,18 +99,12 @@ class Admin extends CI_Controller {
             $data['phone'] = $this->input->post('phone');
             
             $this->upload->do_upload();
-            
-            if ( ! $this->upload->do_upload())
-		{
-			$error = array('error' => $this->upload->display_errors());
-
-			$this->load->view('new_member', $error);
-		}
+          
             
             $data[] = $this->upload->data();
             $data['image'] = $data[0]['file_name'];
-            $this->form_validation->set_rules('name', 'Name', 'trim');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            $this->form_validation->set_rules('name', 'Name', 'trim|required');
+            $this->form_validation->set_rules('email', 'Email', 'trim|valid_email');
             $this->form_validation->set_rules('phone', 'Phone', 'trim');
             //$this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean');
            
@@ -122,6 +116,19 @@ class Admin extends CI_Controller {
                 $this->load->view('new_member', $data);
                 $this->load->view('footer2');
             }
+            
+            else if ( ! $this->upload->do_upload())
+		{
+			$error = array('error' => $this->upload->display_errors());
+                        
+                        
+                        $this->load->view('header');           
+                        $this->load->view('new_member', $error);
+                        $this->load->view('footer2');
+                        
+			
+		}
+                
             else
             {   
                
@@ -140,12 +147,20 @@ class Admin extends CI_Controller {
         { 
             $data['email_list'] = $this->Admin_db->email_list(); 
             
-            
             $this->load->view('header');
             $this->load->view('email_list', $data);
             $this->load->view('footer');
         }
         
+        public function click_here()
+        { 
+            $data['click_here'] = $this->Admin_db->click_here(); 
+            
+            $this->load->view('header');
+            $this->load->view('click_here', $data);
+            $this->load->view('footer');
+        }
+       
         public function delete_member()
         {   
             $data['members'] = $this->Admin_db->all_member();   

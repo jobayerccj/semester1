@@ -58,5 +58,13 @@ class Admin_db extends CI_Model {
         $query = $this->db->get();        
         return $query->result();       
     }
+    
+    function click_here(){ 
+        $this->db->select('*');
+        $this->db->from('click_here');
+        
+        $query = $this->db->get();        
+        return $query->result();       
+    }
  
 }

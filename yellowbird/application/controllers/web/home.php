@@ -247,6 +247,8 @@ class Home extends CI_Controller {
                 $cap = create_captcha($vals);
                 $data['cap'] = $cap;
                 
+                $this->session->set_userdata('first_form',$data);
+                
                 $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact you soon.');                
                 $this->load->view('header');           
                 $this->load->view('form1_1',$data);
@@ -294,6 +296,9 @@ class Home extends CI_Controller {
             $data2['sporting'] = $this->input->post('sporting');
             $data2['tools'] = $this->input->post('tools');
             $data2['vehicles'] = $this->input->post('vehicles');
+            
+            $data2['tools'] = $this->input->post('agent');
+            $data2['vehicles'] = $this->input->post('realtor');
             
             $data3['captcha1'] = $this->input->post('captcha1');
             $data3['captcha2'] = $this->input->post('captcha2');

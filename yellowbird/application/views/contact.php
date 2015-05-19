@@ -8,8 +8,6 @@
             </div>
         </div>
         
-        
-        
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-justify">
@@ -17,10 +15,7 @@
                         <h1>Contact Us</h1>
                         
                     </div>
-                    
-                    
-                    
-                    
+                  
                     <div class="col-lg-12">
                         
                         <p>Yellow Bird Estate Sales</p>
@@ -37,7 +32,6 @@
                     </div>
                 </div>
                 
-               
             </div>
         </div>
        
@@ -47,6 +41,9 @@
                <?php 
                     //print_r ($this->session->userdata('new_data'));
                     $newdata = $this->session->userdata('new_data');
+                    
+                    $first_form = $this->session->userdata('first_form');
+                    
                     if($newdata['pop_error']){
                         echo '<center><b>'.$newdata['pop_error'].'</b></center>';
                     }
@@ -80,16 +77,16 @@
                   
                         <div class="form-group">                        
                           
-                            <input type="text" class="form-control" id="InputName" placeholder="*Name:" name="name" required="required" value="<?php echo $newdata['name'];?>">
+                            <input type="text" class="form-control" id="InputName" placeholder="*Name:" name="name" required="required" value="<?php if(isset($first_form)){echo $first_form['name'] ;} else echo $newdata['name'];?>">
                         </div>
                         
                         <div class="form-group">                          
-                          <input type="text" class="form-control" id="InputPhone" placeholder="Phone:" name="phone" value="<?php echo $newdata['phone'];?>">
+                          <input type="text" class="form-control" id="InputPhone" placeholder="Phone:" name="phone" value="<?php if(isset($first_form)){echo $first_form['phone'] ;} else echo $newdata['phone'];?>">
                         </div>
                   
                         <div class="form-group">
                           
-                          <input type="email" class="form-control" id="InputEmail1" placeholder="*Email Address:" name="email" required="required" value="<?php echo $newdata['email'];?>">
+                          <input type="email" class="form-control" id="InputEmail1" placeholder="*Email Address:" name="email" required="required" value="<?php if(isset($first_form)){echo $first_form['email'] ;} else echo $newdata['email'];?>">
                         </div>
                         
                         <div class="form-group">                          

@@ -189,14 +189,12 @@ class Home extends CI_Controller {
             $this->load->view('header');
             $this->load->view('contact', $data);
             $this->load->view('footer2'); 
-            
-            
+                        
         }
         
         public function form1()
         { 
-            
-            
+                        
             $data['name'] = $this->input->post('name');
             $data['email'] = $this->input->post('email');
             $data['phone'] = $this->input->post('phone');
@@ -267,8 +265,7 @@ class Home extends CI_Controller {
                 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
                 
                 //mail($to,$subject, $message,$headers);
-              
-                
+                              
                 $vals = array(
                 'word' => '',
                 'img_path' => './captcha/',
@@ -282,13 +279,14 @@ class Home extends CI_Controller {
                 $cap = create_captcha($vals);
                 $data['cap'] = $cap;
                 
+                $this->session->set_userdata('first_form',$data);
+                
                 $this->session->set_userdata('success_msg', 'Thank you for your information, we will contact soon.');                
                 $this->load->view('header');           
                 $this->load->view('form1_1',$data);
                 $this->load->view('footer');
             }
-            
-            
+                        
         }
         
         public function form2()
@@ -328,6 +326,12 @@ class Home extends CI_Controller {
             $data2['rugs'] = $this->input->post('rugs');
             $data2['sporting'] = $this->input->post('sporting');
             $data2['tools'] = $this->input->post('tools');
+            $data2['vehicles'] = $this->input->post('vehicles');
+            
+            $data2['tools'] = $this->input->post('tools');
+            $data2['vehicles'] = $this->input->post('vehicles');
+            
+            $data2['tools'] = $this->input->post('agent');
             $data2['vehicles'] = $this->input->post('vehicles');
             
             $data3['captcha1'] = $this->input->post('captcha1');
