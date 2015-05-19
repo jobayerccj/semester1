@@ -301,8 +301,8 @@ class Home extends CI_Controller {
             $data2['zip'] = $this->input->post('zip');
             
             $data2['as_soon_as'] = $this->input->post('as_soon_as');
-            $data2['4_6_weeks'] = $this->input->post('4_6_weeks');
-            $data2['6_12_weeks'] = $this->input->post('6_12_weeks');
+            $data2['_4_6_weeks'] = $this->input->post('4_6_weeks');
+            $data2['_6_12_weeks'] = $this->input->post('6_12_weeks');
             $data2['more_then_3'] = $this->input->post('more_then_3');
             
             $data2['full_home'] = $this->input->post('full_home');
@@ -331,8 +331,8 @@ class Home extends CI_Controller {
             $data2['tools'] = $this->input->post('tools');
             $data2['vehicles'] = $this->input->post('vehicles');
             
-            $data2['tools'] = $this->input->post('agent');
-            $data2['vehicles'] = $this->input->post('vehicles');
+            $data2['real_estate_agent'] = $this->input->post('agent');
+            $data2['recommendation'] = $this->input->post('realtor');
             
             $data3['captcha1'] = $this->input->post('captcha1');
             $data3['captcha2'] = $this->input->post('captcha2');
