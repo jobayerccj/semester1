@@ -1,3 +1,9 @@
+<style>
+    .td-internal1{    
+        border: 1px solid #D1D0CE;        
+        font-size: 12px;
+    }
+</style>
 <div class="container">
             <div class="col-lg-12 col-md-12 col-sm-12 form-part">
                    
@@ -23,11 +29,51 @@
                                <th style="border:1px solid #000;">ZIP</th>
                                <th style="border:1px solid #000;" colspan="4">
                                    Time Frame<br/>
-                                   <span style="font-size: 10px;" >(as soon as) </span> <span style="font-size: 10px;"> (4-6 weeks) &nbsp;&nbsp;&nbsp;</span> <span style="font-size: 10px;">(6-12 weeks)</span>
-                                   <span style="font-size: 10px;">&nbsp;&nbsp;&nbsp;(more than 3)</span>
+                                   <table>
+                                        <tr>
+                                            <td class="td-internal1">as soon as</td>
+                                            <td class="td-internal1">4-6 weeks</td>
+                                            <td class="td-internal1">6-12 weeks</td>
+                                            <td class="td-internal1">more than 3</td>
+                                        </tr>
+                                    </table>
+                                   
                                </th>
-                               <th style="border:1px solid #000;" colspan="3">How much to sell<br/></th>
-                               <th style="border:1px solid #000;" colspan="16">What to sell <br/></th>
+                               <th style="border:1px solid #000;" colspan="3">
+                                   <span class="aligncenter">How much to sell</span><br/>
+                                   <table>
+                                        <tr>
+                                            <td class="td-internal1">Full Home</td>
+                                            <td class="td-internal1">Downsizing</td>
+                                            <td class="td-internal1">Moving</td>
+                                        </tr>
+                                    </table>
+                                   
+                               </th>
+                               <th style="border:1px solid #000;" colspan="16">
+                                   What to sell <br/>
+                                   <table>
+                                        <tr>
+                                            <td class="td-internal1">Accessories</td>
+                                            <td class="td-internal1">Art</td>
+                                            <td class="td-internal1">China</td>
+                                            <td class="td-internal1">Clothing</td>
+                                            <td class="td-internal1">Crystal</td>
+                                            <td class="td-internal1">Firearms</td>
+                                            <td class="td-internal1">Furniture</td>
+                                            <td class="td-internal1">Garage Sales</td>
+                                            <td class="td-internal1">Gold/ Silver</td>
+                                            <td class="td-internal1">Jewelery</td>
+                                            <td class="td-internal1">Kitchen Items</td>
+                                            <td class="td-internal1">Outdoor Items</td>
+                                            <td class="td-internal1">Rugs</td>
+                                            <td class="td-internal1">Sporting Goods</td>
+                                            <td class="td-internal1">Tools</td>
+                                            <td class="td-internal1">Vehicles </td>
+                                        </tr>
+                                    </table>
+                               
+                               </th>
                                
                                <th style="border:1px solid #000;">Have a real estate agent?</th>
                                <th style="border:1px solid #000;">Need recommendation</th>
