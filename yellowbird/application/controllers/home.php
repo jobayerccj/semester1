@@ -508,9 +508,15 @@ class Home extends CI_Controller {
             $this->load->view('header');
             $this->load->view('form1_1', $data);
             $this->load->view('footer2');
-            
-            
+           
         }
+        
+        public function sitemap()
+	{       
+            $this->load->view('header');
+            $this->load->view('sitemap');
+            $this->load->view('footer');
+	}
         
    
 }
