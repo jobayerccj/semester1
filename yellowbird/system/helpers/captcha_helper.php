@@ -42,7 +42,7 @@ if ( ! function_exists('create_captcha'))
 {
 	function create_captcha($data = '', $img_path = '', $img_url = '', $font_path = '')
 	{
-		$defaults = array('word' => '', 'img_path' => '', 'img_url' => '', 'img_width' => '150', 'img_height' => '30', 'font_path' => '', 'expiration' => 7200);
+		$defaults = array('word' => '', 'img_path' => '', 'img_url' => '', 'img_width' => '150', 'img_height' => '30', 'font_path' => '', 'expiration' => 7200, 'font_size' => 25);
 
 		foreach ($defaults as $key => $val)
 		{
@@ -191,13 +191,13 @@ if ( ! function_exists('create_captcha'))
 
 		if ($use_font == FALSE)
 		{
-			$font_size = 5;
+			$font_size = $font_size != 25 ? $font_size : 25;
 			$x = rand(0, $img_width/($length/3));
 			$y = 0;
 		}
 		else
 		{
-			$font_size	= 16;
+			$font_size = $font_size != 25 ? $font_size : 25;
 			$x = rand(0, $img_width/($length/1.5));
 			$y = $font_size+2;
 		}

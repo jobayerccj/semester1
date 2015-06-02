@@ -42,7 +42,7 @@ class Home extends CI_Controller {
                 'word' => '',
                 'img_path' => './captcha/',
                 'img_url' => 'http://localhost/semester1/yellowbird/captcha/',
-               'font_path' => './path/to/fonts/texb.ttf',
+               'font_path' => './fonts/Lato-Black.ttf',
                 'img_width' => '150',
                'img_height' => 30,
                'expiration' => 7200

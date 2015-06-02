@@ -47,19 +47,46 @@ and look forward to the opportunity to help you deal with your estate, liquidati
                 <div class="col-lg-offset-1 col-lg-8 text-justify">
                     <h3>Our Team</h3>
                 </div>
-                <?php if(isset($members)) foreach($members as $member){ ?>
-                    <div class="col-lg-8 text-justify">
-                        <div class="col-lg-4">
-                            <img src="<?php echo base_url();?>uploads/<?php echo $member->image;?>" alt="team1" class="team_img"/>
+                <?php if(isset($members)) 
+                {   
+                    $total_m = count($members);
+                    
+                    if($total_m > 5){
+                    foreach($members as $member){ ?>
+                    
+                        <div class="col-lg-6">    
+                                <div class="col-lg-6">
+                                    <img src="<?php echo base_url();?>uploads/<?php echo $member->image;?>" alt="team1" class="team_img" style="width:240px;height:160px;"/>
+                                </div>
+                                <div class="col-lg-6 team_detals">
+                                   <p><?php echo $member->name; ?></p> 
+                                   <p>Telephone: <?php echo $member->phone; ?></p> 
+                                   <p>Email: <?php echo $member->email; ?></p> 
+                                </div>
                         </div>
-                        <div class="col-lg-8 team_detals">
-                           <p><?php echo $member->name; ?></p> 
-                           <p>Telephone: <?php echo $member->phone; ?></p> 
-                           <p>Email: <?php echo $member->email; ?></p> 
+                   
+                <?php } 
+                
+                    }
+                    else{
+                        foreach($members as $member){ ?>
+                    
+                        <div class="col-lg-8">    
+                                <div class="col-lg-4">
+                                    <img src="<?php echo base_url();?>uploads/<?php echo $member->image;?>" alt="team1" class="team_img" style="width:240px;height:160px;"/>
+                                </div>
+                                <div class="col-lg-8 team_detals">
+                                   <p><?php echo $member->name; ?></p> 
+                                   <p>Telephone: <?php echo $member->phone; ?></p> 
+                                   <p>Email: <?php echo $member->email; ?></p> 
+                                </div>
                         </div>
-
-                    </div>
-                <?php } ?>
+                   
+                <?php }
+                    }
+                
+                
+                    } ?>
                
             </div>
         </div>
